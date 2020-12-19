@@ -1,5 +1,78 @@
+body {
+  //width: 450px;
+  //border: 1px solid green;
+}
+
 .popup-container {
-    min-width: 300px;
-    min-height: 300px;
+  display: flex;
+  //border: 1px solid red;
+  //width: 445px;
+  margin: 0;
+}
+
+.empty-sign {
+  padding: 15px;
+  color: #333;
+}
+
+.dw-wrapper {
+  display: flex;
+  flex-direction: column;
+  //border: 2px dashed darkcyan;
+
+  .dw {
     display: flex;
+    flex-direction: row;
+    padding: 5px;
+    //border: 1px solid blue;
+
+    .dw-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      //border: 1px solid black;
+
+      img {
+        margin: 0 10px;
+      }
+
+      .dw-b {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          width: 380px;
+        }
+
+        .filename {
+          font-weight: 600;
+        }
+
+        .filepath {
+          color: gray;
+          font-size: 11px;
+        }
+
+        .filesize {
+          color: #666;
+          font-size: 11px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .dw-actions {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.truncate {
+  display: block;
+  width: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
