@@ -27,7 +27,7 @@ export const allGood = async (): Promise<Download[]> => {
   return resultList;
 };
 
-export const set = async (dw: Download) => {
+export const set = async (dw: Download): Promise<void> => {
   try {
     await browser.storage.local.set({ [dw.id]: dw });
   } catch (error) {
@@ -35,7 +35,7 @@ export const set = async (dw: Download) => {
   }
 };
 
-export const remove = async (id: number) => {
+export const remove = async (id: number): Promise<void> => {
   try {
     await browser.storage.local.remove(id.toString());
   } catch (error) {
