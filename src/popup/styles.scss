@@ -1,13 +1,5 @@
 body {
-  //width: 450px;
-  //border: 1px solid green;
-}
-
-.popup-container {
-  display: flex;
-  //border: 1px solid red;
-  //width: 445px;
-  margin: 0;
+  //width: 500px;
 }
 
 .empty-sign {
@@ -15,64 +7,47 @@ body {
   color: #333;
 }
 
-.dw-wrapper {
+.dw {
   display: flex;
-  flex-direction: column;
-  //border: 2px dashed darkcyan;
+  flex-direction: row;
+  padding-right: 10px;
 
-  .dw {
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
-    //border: 1px solid blue;
+  .icon {
+    padding: 15px;
+  }
 
-    .dw-info {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      width: 100%;
-      //border: 1px solid black;
+  .info {
+    width: 100%;
 
-      img {
-        margin: 0 10px;
-      }
-
-      .dw-b {
-        display: flex;
-        flex-direction: column;
-
-        span {
-          width: 380px;
-        }
-
-        .filename {
-          font-weight: 600;
-        }
-
-        .filepath {
-          color: gray;
-          font-size: 11px;
-        }
-
-        .filesize {
-          color: #666;
-          font-size: 11px;
-          font-weight: 600;
-        }
-      }
+    .filename {
+      width:450px;
     }
 
-    .dw-actions {
-      display: flex;
-      flex-direction: column;
+    .filepath {
+      color: gray;
+      font-size: 11px;
+      width: 200px;
     }
+
+    .filesize {
+      color: gray;
+      font-weight: 600;
+      font-size: 11px;
+    }
+  }
+
+  .actions {
+    padding: 10px 0;
   }
 }
 
 .truncate {
   display: block;
-  width: inherit;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.button {
+  cursor: pointer;
 }

@@ -49,28 +49,34 @@ export const Popup: FunctionComponent = () => {
           {downloads.map((dw: Download, i) => {
             return (
               <div className="dw" key={i}>
-                <div className="dw-info">
+                <div className="icon">
                   <img src={dw.icon} width="32" height="32" />
-                  <div className="dw-b">
-                    <span className="filename truncate">
-                      <a href="" onClick={(e) => openFile(e, dw.id)}>
-                        {dw.filenameOnly}
-                      </a>
-                    </span>
-                    <span className="filepath truncate">{dw.filename}</span>
-                    <span className="filesize">{dw.fileSize / 1000} KB</span>
-                  </div>
                 </div>
-
-                <div className="dw-actions">
+                <div className="info">
+                  <div className="filename">
+                    <a
+                      href="#"
+                      className="truncate"
+                      onClick={(e) => openFile(e, dw.id)}
+                    >
+                      {dw.filenameOnly}
+                    </a>
+                  </div>
+                  <div className="filepath truncate">{dw.filename}</div>
+                  <div className="filesize">{dw.fileSize / 1000} KB</div>
+                </div>
+                <div className="actions">
                   <div
-                    className="btn"
+                    className="button"
+                    onClick={(e) => showDownload(e, dw.id)}
+                  >
+                    📁
+                  </div>
+                  <div
+                    className="button"
                     onClick={(e) => removeDownload(e, dw.id)}
                   >
                     ❌
-                  </div>
-                  <div className="btn" onClick={(e) => showDownload(e, dw.id)}>
-                    📁
                   </div>
                 </div>
               </div>
