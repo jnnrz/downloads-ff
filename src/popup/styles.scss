@@ -11,33 +11,41 @@ body {
   display: flex;
   flex-direction: row;
   padding-right: 10px;
+  border-bottom: 1px solid #ccc;
 
   .icon {
     padding: 15px;
   }
 
   .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     width: 100%;
 
-    .filename {
-      width:450px;
-    }
-
     .filepath {
+      align-items: center;
       color: gray;
       font-size: 11px;
-      width: 200px;
+      width: 100%;
     }
 
     .filesize {
+      padding: 5px 0;
       color: gray;
       font-weight: 600;
       font-size: 11px;
     }
+
+    .ds {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   .actions {
-    padding: 10px 0;
+    display: flex;
   }
 }
 

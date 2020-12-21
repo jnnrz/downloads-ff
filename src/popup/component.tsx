@@ -56,28 +56,31 @@ export const Popup: FunctionComponent = () => {
                   <div className="filename">
                     <a
                       href="#"
-                      className="truncate"
+                      className="truncates"
                       onClick={(e) => openFile(e, dw.id)}
                     >
                       {dw.filenameOnly}
                     </a>
                   </div>
-                  <div className="filepath truncate">{dw.filename}</div>
+                  <div className="ds">
+                    <div className="filepath">{dw.filename}</div>
+                    <div className="actions">
+                      <div
+                        className="button"
+                        onClick={(e) => showDownload(e, dw.id)}
+                      >
+                        📁
+                      </div>
+                      <div
+                        className="button"
+                        onClick={(e) => removeDownload(e, dw.id)}
+                      >
+                        ❌
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="filesize">{dw.fileSize / 1000} KB</div>
-                </div>
-                <div className="actions">
-                  <div
-                    className="button"
-                    onClick={(e) => showDownload(e, dw.id)}
-                  >
-                    📁
-                  </div>
-                  <div
-                    className="button"
-                    onClick={(e) => removeDownload(e, dw.id)}
-                  >
-                    ❌
-                  </div>
                 </div>
               </div>
             );
