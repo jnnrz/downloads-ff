@@ -82,7 +82,7 @@ export const Popup: FunctionComponent = () => {
                       <div
                         className="button"
                         role="button"
-                        tabIndex="0"
+                        tabIndex={0}
                         onClick={(e) => showDownload(e, dw.id)}
                         onKeyDown={(e) => showDownload(e, dw.id)}
                       >
@@ -93,7 +93,7 @@ export const Popup: FunctionComponent = () => {
                       <div
                         className="button"
                         role="button"
-                        tabIndex="0"
+                        tabIndex={0}
                         onClick={(e) => removeDownload(e, dw.id)}
                         onKeyDown={(e) => removeDownload(e, dw.id)}
                       >
