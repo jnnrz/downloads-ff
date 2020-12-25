@@ -3,6 +3,7 @@ import React, {
   useEffect,
   useState,
   MouseEvent,
+  KeyboardEvent,
 } from "react";
 import { browser } from "webextension-polyfill-ts";
 import { Download } from "../types";
@@ -21,23 +22,19 @@ export const Popup: FunctionComponent = () => {
     processDownloads();
   }, []);
 
-  const openFile = async (e: MouseEvent, id: number) => {
-    if (
-      (e as KeyboardEvent).key !== undefined &&
-      (e as KeyboardEvent).key !== "Enter"
-    )
-      return;
+  const openFile = async (e: MouseEvent | KeyboardEvent, id: number) => {
+    if (e.nativeEvent instanceof KeyboardEvent) {
+      if (e.nativeEvent.key !== "Enter") return;
+    }
 
     e.preventDefault();
     await browser.downloads.open(id);
   };
 
-  const removeDownload = async (e: MouseEvent, id: number) => {
-    if (
-      (e as KeyboardEvent).key !== undefined &&
-      (e as KeyboardEvent).key !== "Enter"
-    )
-      return;
+  const removeDownload = async (e: MouseEvent | KeyboardEvent, id: number) => {
+    if (e.nativeEvent instanceof KeyboardEvent) {
+      if (e.nativeEvent.key !== "Enter") return;
+    }
 
     e.preventDefault();
 
@@ -49,11 +46,9 @@ export const Popup: FunctionComponent = () => {
   };
 
   const showDownload = async (e: MouseEvent | KeyboardEvent, id: number) => {
-    if (
-      (e as KeyboardEvent).key !== undefined &&
-      (e as KeyboardEvent).key !== "Enter"
-    )
-      return;
+    if (e.nativeEvent instanceof KeyboardEvent) {
+      if (e.nativeEvent.key !== "Enter") return;
+    }
 
     e.preventDefault();
     await browser.downloads.show(id);
