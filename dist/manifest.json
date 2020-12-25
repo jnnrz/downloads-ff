@@ -5,7 +5,7 @@
   "author": "Johann Perozo",
   "version": "1.0.0",
   "browser_action": {
-    "default_icon": "images/down24.png",
+    "default_icon": "images/down24.svg",
     "default_popup": "popup.html"
   },
   "background": {
