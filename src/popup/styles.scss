@@ -1,7 +1,3 @@
-body {
-  //width: 500px;
-}
-
 .empty-sign {
   padding: 15px;
   color: #333;
@@ -10,7 +6,6 @@ body {
 .dw {
   display: flex;
   flex-direction: row;
-  padding-right: 10px;
   border-bottom: 1px solid #ccc;
 
   .icon {
@@ -22,9 +17,12 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
+    padding-right: 15px;
 
     .filepath {
+      display: flex;
       align-items: center;
+      padding-right: 5px;
       color: gray;
       font-size: 11px;
       width: 100%;
