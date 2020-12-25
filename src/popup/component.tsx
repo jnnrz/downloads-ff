@@ -4,7 +4,7 @@ import React, {
   useState,
   MouseEvent,
 } from "react";
-import { browser, Downloads } from "webextension-polyfill-ts";
+import { browser } from "webextension-polyfill-ts";
 import { Download } from "../types";
 import * as repo from "../storage";
 import "./styles.scss";
@@ -22,11 +22,23 @@ export const Popup: FunctionComponent = () => {
   }, []);
 
   const openFile = async (e: MouseEvent, id: number) => {
+    if (
+      (e as KeyboardEvent).key !== undefined &&
+      (e as KeyboardEvent).key !== "Enter"
+    )
+      return;
+
     e.preventDefault();
     await browser.downloads.open(id);
   };
 
   const removeDownload = async (e: MouseEvent, id: number) => {
+    if (
+      (e as KeyboardEvent).key !== undefined &&
+      (e as KeyboardEvent).key !== "Enter"
+    )
+      return;
+
     e.preventDefault();
 
     if (repo.has(id)) {
@@ -36,7 +48,13 @@ export const Popup: FunctionComponent = () => {
     }
   };
 
-  const showDownload = async (e: MouseEvent, id: number) => {
+  const showDownload = async (e: MouseEvent | KeyboardEvent, id: number) => {
+    if (
+      (e as KeyboardEvent).key !== undefined &&
+      (e as KeyboardEvent).key !== "Enter"
+    )
+      return;
+
     e.preventDefault();
     await browser.downloads.show(id);
   };
@@ -54,11 +72,7 @@ export const Popup: FunctionComponent = () => {
                 </div>
                 <div className="info">
                   <div className="filename">
-                    <a
-                      href="#"
-                      className="truncates"
-                      onClick={(e) => openFile(e, dw.id)}
-                    >
+                    <a href="#" onClick={(e) => openFile(e, dw.id)}>
                       {dw.filenameOnly}
                     </a>
                   </div>
@@ -67,15 +81,25 @@ export const Popup: FunctionComponent = () => {
                     <div className="actions">
                       <div
                         className="button"
+                        role="button"
+                        tabIndex="0"
                         onClick={(e) => showDownload(e, dw.id)}
+                        onKeyDown={(e) => showDownload(e, dw.id)}
                       >
-                        📁
+                        <span role="img" aria-label="open download">
+                          📁
+                        </span>
                       </div>
                       <div
                         className="button"
+                        role="button"
+                        tabIndex="0"
                         onClick={(e) => removeDownload(e, dw.id)}
+                        onKeyDown={(e) => removeDownload(e, dw.id)}
                       >
-                        ❌
+                        <span role="img" aria-label="delete download">
+                          ❌
+                        </span>
                       </div>
                     </div>
                   </div>
