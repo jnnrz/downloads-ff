@@ -10,7 +10,7 @@
   },
   "background": {
     "scripts": [
-      "js/backgroundPage.js"
+      "backgroundPage.js"
     ],
     "persistent": true
   },
