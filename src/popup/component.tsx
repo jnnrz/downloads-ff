@@ -13,6 +13,7 @@ import folderIconPath from "../assets/images/folder.svg";
 import removeIconPath from "../assets/images/remove.svg";
 
 import "./styles.scss";
+import { formatBytes } from "@src/utils";
 
 export const Popup: FunctionComponent = () => {
   const [downloads, setDownloads] = useState([]);
@@ -82,7 +83,7 @@ export const Popup: FunctionComponent = () => {
                   <div className="filepath">
                     <span className="truncate">{dw.filename}</span>
                   </div>
-                  <div className="filesize">{dw.fileSize / 1000} KB</div>
+                  <div className="filesize">{formatBytes(dw.fileSize, 0)}</div>
                 </div>
                 <div className="actions">
                   <div
