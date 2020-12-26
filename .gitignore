@@ -1,4 +1,4 @@
-dist/js/*
+dist
 .vscode
 storybook-static/*
 

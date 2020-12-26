@@ -8,6 +8,10 @@ import React, {
 import { browser } from "webextension-polyfill-ts";
 import { Download } from "../types";
 import * as repo from "../storage";
+
+import folderIconPath from "../assets/images/folder.svg";
+import removeIconPath from "../assets/images/remove.svg";
+
 import "./styles.scss";
 
 export const Popup: FunctionComponent = () => {
@@ -81,9 +85,7 @@ export const Popup: FunctionComponent = () => {
                         onClick={(e) => showDownload(e, dw.id)}
                         onKeyDown={(e) => showDownload(e, dw.id)}
                       >
-                        <span role="img" aria-label="open download">
-                          📁
-                        </span>
+                        <img src={folderIconPath} width="18px" height="18px" />
                       </div>
                       <div
                         className="button"
@@ -92,9 +94,7 @@ export const Popup: FunctionComponent = () => {
                         onClick={(e) => removeDownload(e, dw.id)}
                         onKeyDown={(e) => removeDownload(e, dw.id)}
                       >
-                        <span role="img" aria-label="delete download">
-                          ❌
-                        </span>
+                        <img src={removeIconPath} width="18px" height="18px" />
                       </div>
                     </div>
                   </div>

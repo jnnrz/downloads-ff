@@ -1,4 +1,5 @@
 const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -6,7 +7,7 @@ module.exports = {
     popup: path.join(__dirname, "src/popup/index.tsx"),
   },
   output: {
-    path: path.join(__dirname, "dist/js"),
+    path: path.join(__dirname, "dist/"),
     filename: "[name].js",
   },
   module: {
@@ -31,6 +32,28 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[hash]-[name].[ext]",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(ttf|eot|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "fonts/[hash]-[name].[ext]",
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
@@ -39,4 +62,9 @@ module.exports = {
       "@src": path.resolve(__dirname, "src/"),
     },
   },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [{ from: "public" }],
+    }),
+  ],
 };
