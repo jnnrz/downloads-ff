@@ -6,18 +6,31 @@
 .dw {
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.02)
+  }
 
   .icon {
     padding: 15px;
   }
 
   .info {
-    display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 100%;
+    overflow: auto;
+    position: relative;
     padding-right: 15px;
+
+
+    .filename {
+      a {
+        width: 95%;
+        font-weight: 600;
+      }
+    }
 
     .filepath {
       display: flex;
@@ -25,7 +38,7 @@
       padding-right: 5px;
       color: gray;
       font-size: 11px;
-      width: 100%;
+      width: 95%;
     }
 
     .filesize {

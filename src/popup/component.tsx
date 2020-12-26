@@ -71,11 +71,17 @@ export const Popup: FunctionComponent = () => {
                 </div>
                 <div className="info">
                   <div className="filename">
-                    <a href="#" onClick={(e) => openFile(e, dw.id)}>
+                    <a
+                      href="#"
+                      className="truncate"
+                      onClick={(e) => openFile(e, dw.id)}
+                    >
                       {dw.filenameOnly}
                     </a>
                   </div>
-                  <div className="filepath">{dw.filename}</div>
+                  <div className="filepath">
+                    <span className="truncate">{dw.filename}</span>
+                  </div>
                   <div className="filesize">{dw.fileSize / 1000} KB</div>
                 </div>
                 <div className="actions">
