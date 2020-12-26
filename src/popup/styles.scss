@@ -6,7 +6,7 @@
 .dw {
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
 
   .icon {
     padding: 15px;
@@ -34,16 +34,13 @@
       font-weight: 600;
       font-size: 11px;
     }
-
-    .ds {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
   }
 
   .actions {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
   }
 }
 

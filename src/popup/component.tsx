@@ -75,31 +75,28 @@ export const Popup: FunctionComponent = () => {
                       {dw.filenameOnly}
                     </a>
                   </div>
-                  <div className="ds">
-                    <div className="filepath">{dw.filename}</div>
-                    <div className="actions">
-                      <div
-                        className="button"
-                        role="button"
-                        tabIndex={0}
-                        onClick={(e) => showDownload(e, dw.id)}
-                        onKeyDown={(e) => showDownload(e, dw.id)}
-                      >
-                        <img src={folderIconPath} width="18px" height="18px" />
-                      </div>
-                      <div
-                        className="button"
-                        role="button"
-                        tabIndex={0}
-                        onClick={(e) => removeDownload(e, dw.id)}
-                        onKeyDown={(e) => removeDownload(e, dw.id)}
-                      >
-                        <img src={removeIconPath} width="18px" height="18px" />
-                      </div>
-                    </div>
-                  </div>
-
+                  <div className="filepath">{dw.filename}</div>
                   <div className="filesize">{dw.fileSize / 1000} KB</div>
+                </div>
+                <div className="actions">
+                  <div
+                    className="button"
+                    role="button"
+                    tabIndex={0}
+                    onClick={(e) => removeDownload(e, dw.id)}
+                    onKeyDown={(e) => removeDownload(e, dw.id)}
+                  >
+                    <img src={removeIconPath} width="16px" height="16px" />
+                  </div>
+                  <div
+                    className="button"
+                    role="button"
+                    tabIndex={0}
+                    onClick={(e) => showDownload(e, dw.id)}
+                    onKeyDown={(e) => showDownload(e, dw.id)}
+                  >
+                    <img src={folderIconPath} width="16px" height="16px" />
+                  </div>
                 </div>
               </div>
             );
