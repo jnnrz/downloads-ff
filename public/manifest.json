@@ -3,7 +3,7 @@
   "name": "Downloads",
   "description": "Download history in a little box",
   "author": "Johann Perozo",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "browser_action": {
     "default_icon": "images/down24.svg",
     "default_popup": "popup.html"
