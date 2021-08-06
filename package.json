@@ -1,6 +1,6 @@
 {
   "name": "downloads-ff",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Download history in a little box",
   "main": "index.js",
   "scripts": {
