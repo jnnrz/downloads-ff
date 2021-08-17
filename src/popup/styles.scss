@@ -3,6 +3,11 @@
   color: #333;
 }
 
+html {
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
 .dw-wrapper {
   display: grid;
   grid-template-columns: 450px;
