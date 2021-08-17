@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useEffect,
-  useState,
-  MouseEvent,
-  KeyboardEvent,
-} from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import { browser } from "webextension-polyfill-ts";
 import { Download } from "../types";
 import * as repo from "../storage";
@@ -12,8 +6,8 @@ import * as repo from "../storage";
 import folderIconPath from "../assets/images/folder.svg";
 import removeIconPath from "../assets/images/remove.svg";
 
-import "./styles.scss";
 import { formatBytes, enterKeyFilter } from "@src/utils";
+import "./styles.scss";
 
 export const Popup: FunctionComponent = () => {
   const [downloads, setDownloads] = useState([]);
@@ -58,12 +52,12 @@ export const Popup: FunctionComponent = () => {
           >
             <button>Clear all</button>
           </div>
-          <div className="dw-wrapper">
-            {downloads.map((dw: Download, i) => {
+          <div className="dls-wrapper">
+            {downloads.map((dl: Download, i) => {
               return (
-                <div className="dw" key={i}>
+                <div className="dl" key={i}>
                   <div className="icon">
-                    <img src={dw.icon} width="32" height="32" />
+                    <img src={dl.icon} width="32" height="32" />
                   </div>
                   <div className="info">
                     <div className="filename">
@@ -71,17 +65,17 @@ export const Popup: FunctionComponent = () => {
                         href="#"
                         className="truncate"
                         onClick={(e) =>
-                          enterKeyFilter(e, () => openFile(dw.id))
+                          enterKeyFilter(e, () => openFile(dl.id))
                         }
                       >
-                        {dw.filenameOnly}
+                        {dl.filenameOnly}
                       </a>
                     </div>
                     <div className="filepath">
-                      <span className="truncate">{dw.filename}</span>
+                      <span className="truncate">{dl.filename}</span>
                     </div>
                     <div className="filesize">
-                      {formatBytes(dw.fileSize, 0)}
+                      {formatBytes(dl.fileSize, 0)}
                     </div>
                   </div>
                   <div className="actions">
@@ -90,10 +84,10 @@ export const Popup: FunctionComponent = () => {
                       role="button"
                       tabIndex={0}
                       onClick={(e) =>
-                        enterKeyFilter(e, () => removeDownload(dw.id))
+                        enterKeyFilter(e, () => removeDownload(dl.id))
                       }
                       onKeyDown={(e) =>
-                        enterKeyFilter(e, () => removeDownload(dw.id))
+                        enterKeyFilter(e, () => removeDownload(dl.id))
                       }
                     >
                       <img src={removeIconPath} width="16px" height="16px" />
@@ -103,10 +97,10 @@ export const Popup: FunctionComponent = () => {
                       role="button"
                       tabIndex={0}
                       onClick={(e) =>
-                        enterKeyFilter(e, () => showDownload(dw.id))
+                        enterKeyFilter(e, () => showDownload(dl.id))
                       }
                       onKeyDown={(e) =>
-                        enterKeyFilter(e, () => showDownload(dw.id))
+                        enterKeyFilter(e, () => showDownload(dl.id))
                       }
                     >
                       <img src={folderIconPath} width="16px" height="16px" />

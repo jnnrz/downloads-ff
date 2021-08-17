@@ -17,62 +17,62 @@ html {
     bottom: 20px;
     z-index: 999;
   }
-}
 
-.dw-wrapper {
-  display: grid;
-  grid-template-columns: 450px;
+  .dls-wrapper {
+    display: grid;
+    grid-template-columns: 450px;
 
-  .dw {
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    .dl {
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.02);
-    }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.02);
+      }
 
-    .icon {
-      padding: 15px;
-    }
+      .icon {
+        padding: 15px;
+      }
 
-    .info {
-      flex: 1 1 auto;
-      flex-direction: column;
-      justify-content: space-evenly;
-      overflow: auto;
-      position: relative;
-      padding-right: 15px;
+      .info {
+        flex: 1 1 auto;
+        flex-direction: column;
+        justify-content: space-evenly;
+        overflow: auto;
+        position: relative;
+        padding-right: 15px;
 
-      .filename {
-        a {
+        .filename {
+          a {
+            width: 95%;
+            font-weight: 600;
+          }
+        }
+
+        .filepath {
+          display: flex;
+          align-items: center;
+          padding-right: 5px;
+          color: gray;
+          font-size: 11px;
           width: 95%;
-          font-weight: 600;
+        }
+
+        .filesize {
+          padding: 5px 0;
+          color: gray;
+          font-weight: 700;
+          font-size: 11px;
         }
       }
 
-      .filepath {
+      .actions {
         display: flex;
-        align-items: center;
-        padding-right: 5px;
-        color: gray;
-        font-size: 11px;
-        width: 95%;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
       }
-
-      .filesize {
-        padding: 5px 0;
-        color: gray;
-        font-weight: 700;
-        font-size: 11px;
-      }
-    }
-
-    .actions {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 10px;
     }
   }
 }
