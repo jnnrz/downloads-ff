@@ -8,18 +8,17 @@ Download history in a little box
 Run the following commands to install dependencies and start developing
 
 ```
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
 
 **Scripts**
 
--   `pnpm dev` - run `webpack` in `watch` mode
--   `pnpm storybook` - runs the Storybook server
--   `pnpm build` - builds the production-ready unpacked extension
--   `pnpm test -u` - runs Jest + updates test snapshots
--   `pnpm lint` - runs EsLint
--   `pnpm prettify` - runs Prettier
+-   `npm run dev` - run `webpack` in `watch` mode
+-   `npm run build` - builds the production-ready unpacked extension
+-   `npm run test -u` - runs Jest + updates test snapshots
+-   `npm run lint` - runs EsLint
+-   `npm run prettify` - runs Prettier
 
 
 <details>
@@ -48,13 +47,10 @@ In [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/), open up the [a
 
 -   [React](https://reactjs.org)
 -   [TypeScript](https://www.typescriptlang.org/)
--   [Storybook](https://storybook.js.org/)
 -   [Jest](https://jestjs.io)
 -   [Eslint](https://eslint.org/)
 -   [Prettier](https://prettier.io/)
 -   [Webpack](https://webpack.js.org/)
--   [Babel](https://babeljs.io/)
--   [Bootstrap](https://getbootstrap.com)
 -   [SCSS](https://sass-lang.com/)
 -   [webextension-polyfill-ts](https://github.com/Lusito/webextension-polyfill-ts)
 
