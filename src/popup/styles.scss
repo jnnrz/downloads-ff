@@ -8,6 +8,17 @@ html {
   scrollbar-width: thin;
 }
 
+.popup-container {
+  position: relative;
+
+  .clear-all {
+    position: fixed;
+    right: 40px;
+    bottom: 20px;
+    z-index: 999;
+  }
+}
+
 .dw-wrapper {
   display: grid;
   grid-template-columns: 450px;

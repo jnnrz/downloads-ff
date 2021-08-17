@@ -42,3 +42,7 @@ export const remove = async (id: number): Promise<void> => {
     console.log(`Error: ${error}`);
   }
 };
+
+export const clear = async (): Promise<void> => {
+  return await browser.storage.local.clear();
+};
